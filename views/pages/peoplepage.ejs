@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+
+<div class="container">
+
+<main>
+    <h4 id="person" style="display: none;"></h4>
+    <a href="./main">Back to homepage</a><br>
+    <% rows.forEach(function(r) {
+        height = r.height;
+        width = r.size-r.height;
+        if(width<50)
+            width = 50;
+        %>
+        <svg id="<%=r.id%>" name="block" height="<%=height%>" width="<%=width%>"
+            style="border: solid 1pt red; border-collapse: collapse; fill-opacity: 1;">
+            <text x='0' y='15' fill='black'><%=r.name%></text>
+        </svg>
+        <span class="<%=r.id%>" style="display: none;">{"id":<%=r.id%>, "name":<%=r.name%>, "size":<%=r.size%>, "height":<%=r.height%>, "type":<%=r.type%>}</span>
+    <%}); %>
+</main>
+
+
+</div>
+
+<script>
+    // initialize all of the blocks in the game to listen for clicks
+    var blocks = document.getElementsByName("block");
+
+    // change  the background colour
+    for(var i=0; i<blocks.length; i++) {
+
+        var element = document.getElementsByClassName(blocks[i].id);
+
+        if(element[0].innerHTML.substring(element[0].innerHTML.indexOf('type')).indexOf('F')>0)
+            document.getElementById(blocks[i].id).style.backgroundColor = "pink";
+        else
+            document.getElementById(blocks[i].id).style.backgroundColor = "springgreen";
+
+    }
+
+    // show the attributes of the block that is clicked
+    for(var block in blocks) {
+        blocks[block].onclick = function(evt){
+            
+            // extract the id of the block that was clicked
+            var id = evt.srcElement.id.toString();
+
+            // get element that has the class name with the same id of the block that was clicked
+            var span = document.getElementsByClassName(id);
+            document.getElementById("person").innerHTML = span[0].innerHTML;
+            document.getElementById("person").style.display = 'block';
+    };
+}
+</script>
+</body>
+</html>

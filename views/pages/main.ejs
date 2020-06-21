@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+
+<div class="container">
+
+<main>
+  <a href="../../addperson.html">Add Person</a>
+  <a href="../../deleteperson.html">Delete Person</a>
+  <a href="../../editperson.html">Edit Person</a>
+  <a href="./peoplepage">People Page</a>
+  <table style='border: solid 1pt black;' style='border-collapse: collapse;'>
+    <tr>
+      <th style='border: solid 1pt black;' style='border-collapse: collapse;'>ID</th>
+      <th style='border: solid 1pt black;' style='border-collapse: collapse;'>Name</th>
+      <th style='border: solid 1pt black;' style='border-collapse: collapse;'>Size</th>
+      <th style='border: solid 1pt black;' style='border-collapse: collapse;'>Height</th>
+      <th style='border: solid 1pt black;' style='border-collapse: collapse;'>Type</th>
+    </tr>
+    <% rows.forEach(function(r) {%>
+        <tr>
+          <td style='border: solid 1pt black;' style='border-collapse: collapse;'><%= r.id%></td>
+          <td style='border: solid 1pt black;' style='border-collapse: collapse;'><%= r.name%></td>
+          <td style='border: solid 1pt black;' style='border-collapse: collapse;'><%= r.size%></td>
+          <td style='border: solid 1pt black;' style='border-collapse: collapse;'><%= r.height%></td>
+          <td style='border: solid 1pt black;' style='border-collapse: collapse;'><%= r.type%></td>
+        </tr>
+    <%}); %>
+  </table>
+</main>
+
+</div>
+
+</body>
+</html>
