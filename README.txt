@@ -1,4 +1,6 @@
 This application has all of the features that were required in the assignment. 
+Type M means male, and males are represented by boxes that have green backgrounds.
+Type F mean female, and females are represented by boxes that have pink backgrounds.
 Additional to the required features, this assignment has two more features:
 
 1. The boxes representing each person in the relation are less opaque for older people, 
