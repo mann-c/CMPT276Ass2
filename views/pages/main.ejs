@@ -9,17 +9,23 @@
 <div class="container">
 
 <main>
-  <a href="../../addperson.html">Add Person</a>
-  <a href="../../deleteperson.html">Delete Person</a>
-  <a href="../../editperson.html">Edit Person</a>
-  <a href="./peoplepage">People Page</a>
-  <table style='border: solid 1pt black;' style='border-collapse: collapse;'>
+  <a href="../../addperson.html" style=" border: solid 2pt palevioletred; border-collapse: collapse; border-radius: 20%;
+    padding-top: 5px; padding-right: 10px; padding-bottom: 5px; padding-left: 10px; text-align: center;">Add Person</a>
+  <a href="../../deleteperson.html" style=" border: solid 2pt palevioletred; border-collapse: collapse; border-radius: 20%;
+    padding-top: 5px; padding-right: 10px; padding-bottom: 5px; padding-left: 10px; text-align: center;">Delete Person</a>
+  <a href="../../editperson.html" style=" border: solid 2pt palevioletred; border-collapse: collapse; border-radius: 20%;
+    padding-top: 5px; padding-right: 10px; padding-bottom: 5px; padding-left: 10px; text-align: center;">Edit Person</a>
+  <a href="./peoplepage" style=" border: solid 2pt palevioletred; border-collapse: collapse; border-radius: 20%;
+    padding-top: 5px; padding-right: 10px; padding-bottom: 5px; padding-left: 10px; text-align: center;">People Page</a>
+  <table style='border: solid 1pt black; border-collapse: collapse; position: relative; top: 50px;'>
     <tr>
       <th style='border: solid 1pt black;' style='border-collapse: collapse;'>ID</th>
       <th style='border: solid 1pt black;' style='border-collapse: collapse;'>Name</th>
       <th style='border: solid 1pt black;' style='border-collapse: collapse;'>Size</th>
       <th style='border: solid 1pt black;' style='border-collapse: collapse;'>Height</th>
       <th style='border: solid 1pt black;' style='border-collapse: collapse;'>Type</th>
+      <th style='border: solid 1pt black;' style='border-collapse: collapse;'>Age</th>
+      <th style='border: solid 1pt black;' style='border-collapse: collapse;'>Married</th>
     </tr>
     <% rows.forEach(function(r) {%>
         <tr>
@@ -28,6 +34,8 @@
           <td style='border: solid 1pt black;' style='border-collapse: collapse;'><%= r.size%></td>
           <td style='border: solid 1pt black;' style='border-collapse: collapse;'><%= r.height%></td>
           <td style='border: solid 1pt black;' style='border-collapse: collapse;'><%= r.type%></td>
+          <td style='border: solid 1pt black;' style='border-collapse: collapse;'><%= r.age%></td>
+          <td style='border: solid 1pt black;' style='border-collapse: collapse;'><%= r.married%></td>
         </tr>
     <%}); %>
   </table>

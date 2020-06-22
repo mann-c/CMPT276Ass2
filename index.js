@@ -42,6 +42,8 @@ var app = express();
     var size = req.body.size;
     var height = req.body.height;
     var type = req.body.type;
+    var age = req.body.age;
+    var married = req.body.married;
     var number;
 
     var getPersonQuery = `SELECT MAX(ID) FROM Person`;
@@ -50,7 +52,7 @@ var app = express();
         res.end(error);
       
       number = result.rows[0].max + 1;
-      pool.query(`insert into person values(${number},'${name}', ${size}, ${height}, '${type}')`, (error,result)=>{
+      pool.query(`insert into person values(${number},'${name}', ${size}, ${height}, '${type}', ${age}, ${married})`, (error,result)=>{
         if(error)
           res.end(error);
       })
@@ -75,8 +77,11 @@ var app = express();
     var size = req.body.size;
     var height = req.body.height;
     var type = req.body.type;
+    var age = req.body.age;
+    var married = req.body.married;
 
-    var modifyQuery = `update person set name='${name}', size=${size}, height=${height}, type='${type}' where id=${id}`;
+    var modifyQuery = `update person set name='${name}', size=${size}, height=${height}, 
+      type='${type}', age=${age}, married=${married} where id=${id}`;
     pool.query(modifyQuery, (error, result) => {
       if(error)
         res.end(error);
